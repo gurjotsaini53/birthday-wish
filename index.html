@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="src/css/index.css" />
   </head>
   <body>
-    <div class="first--slide">
+
+    <div class="mobile-message" id="mobileMessage">
+      Please view this site on a mobile device for the best experience!
+  </div>
+  
+
+    <div class="first--slide" id="mainContent">
       <div class="slide--content">
         <h1>hello</h1>
         <h2>Dear Vishakha</h2>
@@ -1998,6 +2004,23 @@
       <img src="src/images/gift.png" alt="" id="gf3" />
     </div>
 
+    <script>
+    
+    function checkDevice() {
+            if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+                document.getElementById('mobileMessage').style.display = 'block';
+                document.getElementById('mainContent').style.display = 'none';
+            } else {
+                document.getElementById('mobileMessage').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+            }
+        }
+
+        checkDevice();
+
+        window.addEventListener('resize', checkDevice);
+    </script>
     <script src="src/js/index.js"></script>
+ 
   </body>
 </html>
